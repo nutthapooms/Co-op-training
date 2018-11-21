@@ -4,7 +4,7 @@
 
 char * parseStringg(char* stringg){
     char * asd = "asdasdasd";
-    return asd;
+    return stringg;
 }
 
 int main() {
@@ -17,29 +17,29 @@ int main() {
         printf("Could not open file %s",filename);
         return 1;
     }
-    //fprintf(fp,"1asdasd23");
+    fprintf(fp," add this part");
     fclose(fp);
     fp = fopen(filename, "r+");
-     fgets(str, MAXCHAR, fp);
+    fgets(str, MAXCHAR, fp); //this will move file index
     char c = "";
     while(c!= EOF){
         c = fgetc(fp);
-        printf("%d \n",c);
+        printf("%c \n",c);
     }
-
+    //parse string and return-------------------------------------------------------------------
     printf("%s \n", parseStringg(str));
     fclose(fp);
-
+    //search word in file-------------------------------------------------------------------------
     fp=fopen("text.txt","r");
     char tmp[256]={0x0};
-    while(fp && fgets(tmp, sizeof(tmp), fp))
+    int fileLine = 0;
+    while(fp && fgets(tmp, sizeof(tmp), fp)!=NULL)
     {
-        if (strstr(tmp, "haha"))
-            printf("%s", tmp);
-        else if (strstr(tmp, "hehe"))
-            printf("%s", tmp);
+        if (strstr(tmp, "hehe"))
+            printf("hehe found on line: %d \n", fileLine);
+        fileLine++;
     }
-    if(fp) fclose(fp);
+    fclose(fp);
     return 0;
 }
 
