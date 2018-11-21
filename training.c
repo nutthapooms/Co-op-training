@@ -3,8 +3,11 @@
 #define MAXCHAR 5
 
 char * parseStringg(char* stringg){
-    char * asd = "asdasdasd";
-    return stringg;
+    //char asdasd = "fuck it";
+    char *inputString = stringg;
+    printf("%s",inputString);
+    char * asd = "fuck it";
+    return asd;
 }
 
 int main() {
@@ -22,10 +25,10 @@ int main() {
     fp = fopen(filename, "r+");
     fgets(str, MAXCHAR, fp); //this will move file index
     char c = "";
-    while(c!= EOF){
-        c = fgetc(fp);
-        printf("%c \n",c);
-    }
+    //while(c!= EOF){
+    //    c = fgetc(fp);
+    //    printf("%c \n",c);
+    //}
     //parse string and return-------------------------------------------------------------------
     printf("%s \n", parseStringg(str));
     fclose(fp);
