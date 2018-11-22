@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <time.h>
 #define MAXCHAR 5
 
 char * parseStringg(char* stringg){
@@ -19,11 +20,12 @@ int parseStringReInt(char* stringg){
 }
 
 void randomPrint(){
-    time_t timee;
+
     int n = 5;
-    srand((unsigned) time(&timee));
+    srand(time(NULL));
     for( int i = 0 ; i < n ; i++ ) {
-      printf("%c\n", (rand() % 50)+48);
+      int random = rand() % 100+48;
+      printf("%d = %c\n", random,random);
    }
 
 }
