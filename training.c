@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #define MAXCHAR 5
 
 char * parseStringg(char* stringg){
@@ -8,6 +9,23 @@ char * parseStringg(char* stringg){
     printf("%s",inputString);
     char * asd = "fuck it";
     return asd;
+}
+int parseStringReInt(char* stringg){
+    //char asdasd = "fuck it";
+    char *inputString = stringg;
+    printf("%s\n",inputString);
+    char * asd = "fuck it";
+    return inputString[0];
+}
+
+void randomPrint(){
+    time_t timee;
+    int n = 5;
+    srand((unsigned) time(&timee));
+    for( int i = 0 ; i < n ; i++ ) {
+      printf("%c\n", (rand() % 50)+48);
+   }
+
 }
 
 int main() {
@@ -43,6 +61,8 @@ int main() {
         fileLine++;
     }
     fclose(fp);
+    printf("%d\n",parseStringReInt("1")-48);
+    randomPrint();
     return 0;
 }
 
